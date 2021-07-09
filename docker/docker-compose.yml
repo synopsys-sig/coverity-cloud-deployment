@@ -1,0 +1,33 @@
+version: '3.6'
+
+services:
+  postgres:
+    image: postgres:10
+    # ports: ['55436:5432']
+    volumes: ['postgres-volume:/var/lib/postgresql/data' ]
+    user: postgres:root
+    env_file: [postgres-config.env]
+    deploy:
+      mode: replicated
+      restart_policy: {condition: on-failure, delay: 5s, window: 60s}
+      resources:
+    #    limits: {memory: 3072M}
+        reservations: {cpus: '1', memory: 3072M}
+    stop_grace_period: 60s
+  coverity:
+    image: cov-connect:2021.06
+    env_file: [coverity-config.env]
+    ports: ['8080:8080','8443:8443','9090:9090']
+    deploy:
+      mode: replicated
+      restart_policy: {condition: on-failure, delay: 5s, window: 60s}
+      resources:
+      # limits: {cpus: '1', memory: 2560M}
+        reservations: {cpus: '1', memory: 2560M}
+    healthcheck:
+      test: [CMD, /usr/local/bin/health-check.sh]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 7200s
+volumes: {postgres-volume: null}
