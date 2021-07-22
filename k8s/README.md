@@ -20,3 +20,5 @@ Coverity Platform is deployed using provided helm chart. Chart located in [platf
 see [README](platform/README.md)  file for details
 
 ## Deploy Analysis 
+
+For an example on how to deploy and use Coverity Analysis see [this README file](analysis/README.md)
