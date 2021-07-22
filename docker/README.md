@@ -9,11 +9,11 @@ Deployment will use standard postgresq container as the database provider.
 * Linux system with sufficient amount of resources.
 * Docker installed (see https://docs.docker.com/engine/install/)
 * Docker swarm initalized
-* Checkout this project to you docker system
+* Coverity license
 
 ## Deploy containers
 
-Examine docker-comp[os.yml file and adjust resource allocation as necessary.
+Examine docker-compose.yml file and adjust resource allocation as necessary.
 
 Deploy coverity platform with the following command:
 
