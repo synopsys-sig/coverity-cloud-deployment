@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analysis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: analysis
+  template:
+    metadata:
+      labels:
+        app: analysis
+        name: analysis
+    spec:
+      containers:
+        - name: analysis
+          image: gsasig/cov-analysis:2021.06_tooled
+          command: ["sleep"]
+          args: ["1000000"]
+          imagePullPolicy: "IfNotPresent"
+          volumeMounts:
+            - mountPath: /home/coverity/workspace
+              name: workspace
+      volumes:
+        - name: workspace
+          persistentVolumeClaim:
+            claimName: analysis-pv-claim

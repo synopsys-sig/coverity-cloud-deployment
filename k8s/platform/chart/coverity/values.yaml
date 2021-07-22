@@ -1,0 +1,47 @@
+# Default values for coverity.
+
+nameOverride: ""
+fullnameOverride: ""
+
+image:
+  repository: gsasig/cov-connect
+  pullPolicy: IfNotPresent
+  tag: "2021.06"
+
+imagePullSecrets: []
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+resources:
+  limits:
+    memory: 6Gi
+    cpu: "2"
+  requests:
+    memory: 6Gi
+    cpu: "2"
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts: []
+  # - host: coverity.example.com
+  #   paths: [""]
+  tls: []
+
+## PostgreSQL configuration
+postgresql:
+  host: postgres
+  port: 5432
+  database: coverity
+  username: coverity
+  password: coverity
+
