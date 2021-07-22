@@ -13,6 +13,13 @@ spec:
         app: analysis
         name: analysis
     spec:
+      initContainers:
+      - name: volume-mount-hack
+        image: busybox
+        command: ["sh", "-c", "chown -R 1001:1001 /home/coverity/workspace"]
+        volumeMounts:
+            - mountPath: /home/coverity/workspace
+              name: workspace
       containers:
         - name: analysis
           image: gsasig/cov-analysis:2021.06_tooled
