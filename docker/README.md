@@ -104,4 +104,6 @@ Web interface status:       UP
 
 Coverity will respond at http://docker-host:8080 and https://docker-host:8443
 
+# Using Analysis container on Docker Platform
 
+For an example on how to deploy and use Coverity Analysis see [this file](ANALYSIS.md)
