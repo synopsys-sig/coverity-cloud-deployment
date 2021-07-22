@@ -2,9 +2,10 @@
 
 ## Requirements
 
-** Kubernetes cluster
-** Horking kubectl configured to work with the cluster
-** Helm
+* Kubernetes cluster
+* Horking kubectl configured to work with the cluster
+* Helm
+* Coverity License
 
 ## Deployment process
 
