@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-** Access to Coverity Platform (Connect)
-** Coverity License 
-** Docker machine
+* Access to Coverity Platform (Connect)
+* Coverity License 
+* Docker machine
 
