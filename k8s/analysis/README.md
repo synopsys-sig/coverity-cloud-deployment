@@ -14,6 +14,11 @@ Deploy Amalysis container
 kubectl cretae -f analysis-deployment.yml
 ```
 
+Apply license to Analysis container
+
+```
+kubectl cp license.dat <analysis-pod>:/opt/sw/synopsys/coverity/cov-analysis-linux64-2021.06-SP1/bin/
+```
 
 ## Perform test analysis and submit data 
 
