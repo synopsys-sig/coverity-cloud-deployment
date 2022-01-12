@@ -15,7 +15,7 @@ services:
         reservations: {cpus: '1', memory: 3072M}
     stop_grace_period: 60s
   coverity:
-    image: gsasig/cov-connect:2021.06
+    image: gsasig/cov-connect:2021.12.0
     env_file: [coverity-config.env]
     ports: ['8080:8080','8443:8443','9090:9090']
     deploy:
